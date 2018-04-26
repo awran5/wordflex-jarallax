@@ -188,7 +188,7 @@ function WordFlex_Jarallax_CMB2() {
     // Height
     $cmb_jarallax->add_field( array(
         'name'              => __( 'Background height:', 'wordflex-jarallax' ),
-        'desc'              => __( 'Set height in pixels. (Empty or 0) will set Minimum Height 280px', 'wordflex-jarallax' ),
+        'desc'              => __( 'Set height in pixels. (Empty or 0) will set Minimum Height 360px', 'wordflex-jarallax' ),
         'id'                => $prefix . 'height',
         'type'              => 'text_small',
         'attributes'        => array(
