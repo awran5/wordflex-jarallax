@@ -59,7 +59,6 @@ function WordFlex_Jarallax_CMB2() {
         'id'                => $prefix . 'bg_img_src',
         'type'              => 'file',
         'attributes'        => array(
-            'required'               => true,
             'data-conditional-id'    => $prefix . 'bg_type',
             'data-conditional-value' => 'image',
         ),
@@ -72,7 +71,6 @@ function WordFlex_Jarallax_CMB2() {
         'id'                 => $prefix . 'bg_online_src',
         'type'               => 'text_url',
         'attributes'         => array(
-            'required'               => true,
             'data-conditional-id'    => $prefix . 'bg_type',
             'data-conditional-value' => 'embed',
         ),
