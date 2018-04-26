@@ -114,8 +114,8 @@ add_shortcode( 'jarallax', function( $attr, $content = '' ) {
     <!-- End Jarallax Background -->
     <!-- Start Jarallax script -->
     <script>
-        (function($){
-            $('.jarallax').jarallax({
+        function jarallaxInit() {
+            jarallax(document.querySelectorAll('.jarallax'), {
                 type: '<?php echo $ParallaxType ?>',
                 speed: <?php echo !empty($ParallaxSpeed) ? $ParallaxSpeed : 0.2 ?>,
                 <?php echo ($mobileParallax === 'no') ? 'disableParallax: /iPad|iPhone|iPod|Android/, ' : ''; ?>
@@ -126,30 +126,13 @@ add_shortcode( 'jarallax', function( $attr, $content = '' ) {
                     echo !empty( $videoEndTime ) ? 'videoEndTime: ' . $videoEndTime . ', ' : '';
                 } ?>
             });
-        })(jQuery);
+        }
     </script>
+
     <!-- End Jarallax script -->
     <?php
     return ob_get_clean();
 });
 
-add_filter( 'the_content', 'wordflex_jarallax_shortcode_fix' );
-/**
- * Filters the content to remove any extra paragraph or break tags
- * caused by shortcodes.
- *
- * @since 1.0.0
- *
- * @param string $content  String of HTML content.
- * @return string $content Amended string of HTML content.
- */
-function wordflex_jarallax_shortcode_fix( $content ) {
- 
-    $array = array(
-        '<p>['    => '[',
-        ']</p>'   => ']',
-        ']<br />' => ']'
-    );
-    return strtr( $content, $array );
- 
-}
+
+
